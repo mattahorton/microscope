@@ -1,5 +1,9 @@
 Template.postItem.helpers 
+  ownPost: ->
+    return @userId == Meteor.userId()
   domain: ->
     a = document.createElement("a")
     a.href = @url
-    a.hostname
+    if a.hostname isnt "localhost"
+      return a.hostname
+    return @url

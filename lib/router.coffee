@@ -13,6 +13,11 @@ Router.map ->
     data: ->
       return Posts.findOne @params._id
       
+  @route 'postEdit',
+    path: '/posts/:_id/edit'
+    data: ->
+      return Posts.findOne @params._id
+      
   @route 'postSubmit',
     path: '/submit'
 
